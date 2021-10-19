@@ -60,7 +60,10 @@ class App extends Component {
     this.setState({ largeImg: img, isModal: true });
   };
 
-  onCloseModal = () => {
+  onCloseModal = (e) => {
+    if(e && e.target.className !== 'Overlay') {
+      return null
+    }
      this.setState({isModal: false})
   }
 
